@@ -1,0 +1,5 @@
+/Users/Adam/projects/DungeonGeneration/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/Adam/projects/DungeonGeneration/bin/Debug/DungeonGeneration.dll.mdb
+/Users/Adam/projects/DungeonGeneration/bin/Debug/DungeonGeneration.dll
+/Users/Adam/projects/DungeonGeneration/obj/Debug/DungeonGeneration.dll
+/Users/Adam/projects/DungeonGeneration/obj/Debug/DungeonGeneration.dll.mdb

@@ -1,13 +1,13 @@
 ﻿using NUnit.Framework;
 using System;
 
-namespace Tests
+namespace Grid
 {
 	[TestFixture ()]
-	public class Test
+	public class GridTests
 	{
 		[Test ()]
-		public void TestCase ()
+		public void TestGetGrid ()
 		{
 		}
 	}

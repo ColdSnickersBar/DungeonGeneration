@@ -32,12 +32,24 @@
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\packages\NSubstitute.1.5.0.0\lib\NET40\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstituteAutoMocker">
+      <HintPath>..\packages\NSubstituteAutoMocker.1.0.0.2\lib\net45\NSubstituteAutoMocker.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Test.cs" />
+    <Compile Include="GridTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DungeonGeneration.csproj">
+      <Project>{0752F8D5-13F7-42D1-8F1C-13EB887A2799}</Project>
+      <Name>DungeonGeneration</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
