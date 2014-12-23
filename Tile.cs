@@ -2,9 +2,9 @@
 
 namespace DungeonGeneration
 {
-	public class MyClass
+	public class Tile
 	{
-		public MyClass ()
+		public Tile ()
 		{
 		}
 	}
