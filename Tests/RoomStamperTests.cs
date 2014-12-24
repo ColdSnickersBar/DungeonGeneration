@@ -33,8 +33,6 @@ namespace Grids
 
 			Assert.IsTrue (HasOpenRoom (_grid, room));
 		}
-
-
 		
 		[Test ()]
 		public void TestStampedRoomIsSurroundedByClosedTiles ()
