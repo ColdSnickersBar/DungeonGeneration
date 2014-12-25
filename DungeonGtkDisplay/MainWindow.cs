@@ -22,7 +22,7 @@ public partial class MainWindow: Gtk.Window
 		_grid = new Grid (100, 100);
 		var stamper = new RoomStamper (_grid);
 
-		var room = new RoomStamper.RoomSpec {
+		var room = new RoomSpec {
 			x = 1,
 			y = 1,
 			width = 10,
@@ -48,20 +48,28 @@ public partial class MainWindow: Gtk.Window
 		};
 
 		TileColor openColor = new TileColor {
-			Red = 1d,
+			Red = 0d,
 			Green = 1d,
 			Blue = 1d
 		};
 
-		for(int y=0;y<_grid.Height;y++){
-			for(int x=0;x<_grid.Width;x++){
+		DrawGrid (area, closedColor, openColor);
+
+	}
+
+	void DrawGrid (DrawingArea area, TileColor closedColor, TileColor openColor)
+	{
+		for (int y = 0; y < _grid.Height; y++) {
+			for (int x = 0; x < _grid.Width; x++) {
 				var tile = _grid.GetTile (x, y);
 				if (!tile.IsOpen) {
 					DrawSquare (area, 6d, x, y, closedColor);
 				}
+				else {
+					DrawSquare (area, 6d, x, y, openColor);
+				}
 			}
 		}
-
 	}
 
 	static void DrawSquare (DrawingArea area, double size, double x, double y, TileColor color)

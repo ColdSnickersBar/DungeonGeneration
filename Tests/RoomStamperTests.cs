@@ -23,7 +23,7 @@ namespace Grids
 		[Test ()]
 		public void TestStampsRoom ()
 		{
-			RoomStamper.RoomSpec room = new RoomStamper.RoomSpec {
+			var room = new RoomSpec {
 				x = 1,
 				y = 1,
 				width = 5,
@@ -37,7 +37,7 @@ namespace Grids
 		[Test ()]
 		public void TestStampedRoomIsSurroundedByClosedTiles ()
 		{
-			RoomStamper.RoomSpec room = new RoomStamper.RoomSpec {
+			var room = new RoomSpec {
 				x = 1,
 				y = 1,
 				width = 5,
@@ -48,7 +48,7 @@ namespace Grids
 			AssertRoomHasClosedBorders (room);
 		}
 
-		void AssertRoomHasClosedBorders (RoomStamper.RoomSpec room)
+		void AssertRoomHasClosedBorders (RoomSpec room)
 		{
 			Assert.IsTrue (HasClosedRow (_grid, room.x - 1, room.y - 1, room.width + 2));
 			Assert.IsTrue (HasClosedRow (_grid, room.x - 1, room.height + room.y + 1, room.width + 2));
@@ -59,7 +59,7 @@ namespace Grids
 		[Test ()]
 		public void TestWontStampIfStartTileIsAlongLeftBoundary ()
 		{
-			RoomStamper.RoomSpec room = new RoomStamper.RoomSpec {
+			var room = new RoomSpec {
 				x = 0,
 				y = 1,
 				width = 5,
@@ -74,7 +74,7 @@ namespace Grids
 		[Test ()]
 		public void TestWontStampIfStartTileIsAlongTopBoundary ()
 		{
-			RoomStamper.RoomSpec room = new RoomStamper.RoomSpec {
+			var room = new RoomSpec {
 				x = 1,
 				y = 0,
 				width = 5,
@@ -89,7 +89,7 @@ namespace Grids
 		[Test ()]
 		public void TestWontStampIfRoomClipsToRight ()
 		{
-			RoomStamper.RoomSpec room = new RoomStamper.RoomSpec {
+			var room = new RoomSpec {
 				x = _grid.Width-5,
 				y = 1,
 				width = 5,
@@ -104,7 +104,7 @@ namespace Grids
 		[Test ()]
 		public void TestWontStampIfRoomClipsToBottom ()
 		{
-			RoomStamper.RoomSpec room = new RoomStamper.RoomSpec {
+			var room = new RoomSpec {
 				x = 1,
 				y = _grid.Height - 5,
 				width = 5,
@@ -119,7 +119,7 @@ namespace Grids
 		[Test ()]
 		public void TestCanStampMultipleRooms ()
 		{
-			var room = new RoomStamper.RoomSpec {
+			var room = new RoomSpec {
 				x = 1,
 				y = 1,
 				width = 5,
@@ -129,7 +129,7 @@ namespace Grids
 
 			Assert.IsTrue (HasOpenRoom (_grid, room));
 
-			room = new RoomStamper.RoomSpec {
+			room = new RoomSpec {
 				x = 7,
 				y = 1,
 				width = 5,
@@ -145,7 +145,7 @@ namespace Grids
 		[Test ()]
 		public void TestWontStampOnOpenSpace ()
 		{
-			var room = new RoomStamper.RoomSpec {
+			var room = new RoomSpec {
 				x = 1,
 				y = 1,
 				width = 5,
@@ -155,7 +155,7 @@ namespace Grids
 
 			var copyGrid = new Grid (_grid);
 
-			room = new RoomStamper.RoomSpec {
+			room = new RoomSpec {
 				x = 3,
 				y = 1,
 				width = 5,
@@ -171,7 +171,7 @@ namespace Grids
 		[Test ()]
 		public void TestWontStampAdjacentToOpenSpace ()
 		{
-			var room = new RoomStamper.RoomSpec {
+			var room = new RoomSpec {
 				x = 1,
 				y = 1,
 				width = 5,
@@ -181,7 +181,7 @@ namespace Grids
 
 			var copyGrid = new Grid (_grid);
 
-			room = new RoomStamper.RoomSpec {
+			room = new RoomSpec {
 				x = 6,
 				y = 1,
 				width = 5,
@@ -203,7 +203,7 @@ namespace Grids
 			return true;
 		}
 
-		bool HasOpenRoom(Grid grid, RoomStamper.RoomSpec room){
+		bool HasOpenRoom(Grid grid, RoomSpec room){
 			for(int i=room.y;i<room.height;i++){
 				if(!HasOpenRow(grid, room.x, i, room.width)){
 					return false;
@@ -212,7 +212,7 @@ namespace Grids
 			return true;
 		}
 
-		bool HasClosedRoom(Grid grid, RoomStamper.RoomSpec room){
+		bool HasClosedRoom(Grid grid, RoomSpec room){
 			for(int i=room.y;i<room.height;i++){
 				if(!HasClosedRow(grid, room.x, i, room.width)){
 					return false;

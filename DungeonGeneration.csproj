@@ -36,6 +36,7 @@
     <Compile Include="Tile.cs" />
     <Compile Include="RoomStamper.cs" />
     <Compile Include="IRoomStamperNumberGenerator.cs" />
+    <Compile Include="IRoomStamper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

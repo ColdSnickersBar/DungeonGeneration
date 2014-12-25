@@ -10,7 +10,7 @@ namespace DungeonConsoleDisplay
 			var grid = new Grid (100, 100);
 			var stamper = new RoomStamper (grid);
 
-			var room = new RoomStamper.RoomSpec {
+			var room = new RoomSpec {
 				x = 1,
 				y = 1,
 				width = 10,

@@ -33,6 +33,6 @@ Global
 		{E5D26972-DD5B-47CD-9786-25C11B03F299}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = DungeonGeneration.csproj
+		StartupItem = DungeonGtkDisplay\DungeonGtkDisplay.csproj
 	EndGlobalSection
 EndGlobal
