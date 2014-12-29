@@ -2,11 +2,11 @@
 
 namespace DungeonGeneration
 {
-	public class RoomStamper
+	public class RectangularRoomStamper : IRoomStamper
 	{
 		Grid _grid;
 
-		public RoomStamper (Grid grid)
+		public RectangularRoomStamper (Grid grid)
 		{
 			_grid = grid;
 		}

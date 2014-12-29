@@ -20,13 +20,13 @@ public partial class MainWindow: Gtk.Window
 		ShowAll();
 
 		_grid = new Grid (100, 100);
-		var stamper = new RoomStamper (_grid);
+		var stamper = new RectangularRoomStamper (_grid);
 
 		var room = new RoomSpec {
 			x = 1,
 			y = 1,
-			width = 10,
-			height = 10
+			width = 50,
+			height = 50
 		};
 		stamper.Stamp (room);
 	}
@@ -39,50 +39,70 @@ public partial class MainWindow: Gtk.Window
 
 	void OnExpose(object sender, ExposeEventArgs args)
 	{
-		DrawingArea area = (DrawingArea) sender;
+		var area = (DrawingArea)sender;
 
+		DrawGrid (area);
+
+	}
+
+	void DrawGrid (DrawingArea area)
+	{
+		for (int y = 0; y < _grid.Height; y++) {
+			for (int x = 0; x < _grid.Width; x++) {
+				DrawTile (area, x , y);
+			}
+		}
+	}
+
+	void DrawTile (DrawingArea area, int x, int y)
+	{
 		TileColor closedColor = new TileColor {
 			Red = 0,
 			Green = 0,
 			Blue = 0
 		};
 
-		TileColor openColor = new TileColor {
-			Red = 0d,
+		TileColor openBorderColor = new TileColor {
+			Red = 0.6d,
+			Green = 0.6d,
+			Blue = 0.2d
+		};
+
+		var openColor = new TileColor {
+			Red = 1d,
 			Green = 1d,
 			Blue = 1d
 		};
 
-		DrawGrid (area, closedColor, openColor);
+		var squareSize = 6d;
+		var padding = 0.5d;
 
-	}
-
-	void DrawGrid (DrawingArea area, TileColor closedColor, TileColor openColor)
-	{
-		for (int y = 0; y < _grid.Height; y++) {
-			for (int x = 0; x < _grid.Width; x++) {
-				var tile = _grid.GetTile (x, y);
-				if (!tile.IsOpen) {
-					DrawSquare (area, 6d, x, y, closedColor);
-				}
-				else {
-					DrawSquare (area, 6d, x, y, openColor);
-				}
-			}
+		var tile = _grid.GetTile (x, y);
+		if (!tile.IsOpen) {
+			DrawSquare (area, squareSize, x, y, closedColor);
+		}
+		else {
+			DrawSquare (area, squareSize, x, y, openBorderColor);
+			DrawSquare (area, squareSize, x, y, openColor, padding);
 		}
 	}
 
-	static void DrawSquare (DrawingArea area, double size, double x, double y, TileColor color)
+	static void DrawSquare (DrawingArea area, double size, double x, double y, TileColor color, double padding = 0d)
 	{
 		Cairo.Context cr =  Gdk.CairoHelper.Create(area.GdkWindow);
-		x *= size;
-		y *= size;
+
+		x = (x * size) + padding;
+		y = (y * size) + padding;
+
+		size = size - (padding * 2);
+
 		cr.LineWidth = size;
 		cr.SetSourceRGB (color.Red, color.Green, color.Blue);
 		cr.MoveTo (new Cairo.PointD (x, y));
 		cr.LineTo (new Cairo.PointD (x, size+y));
 		cr.ClosePath ();
 		cr.Stroke ();
+
 		((IDisposable) cr.GetTarget()).Dispose();                                      
 		((IDisposable) cr).Dispose();
 	}

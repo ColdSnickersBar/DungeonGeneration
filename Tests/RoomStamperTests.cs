@@ -10,13 +10,13 @@ namespace Grids
 	{
 		Grid _grid;
 
-		RoomStamper _stamper;
+		RectangularRoomStamper _stamper;
 
 		[SetUp]
 		public void Setup(){
 			_grid = new Grid (20, 20);
 
-			_stamper = new RoomStamper (_grid);
+			_stamper = new RectangularRoomStamper (_grid);
 		}
 
 		

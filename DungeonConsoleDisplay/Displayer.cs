@@ -8,7 +8,7 @@ namespace DungeonConsoleDisplay
 		public static void Main (string[] args)
 		{
 			var grid = new Grid (100, 100);
-			var stamper = new RoomStamper (grid);
+			var stamper = new RectangularRoomStamper (grid);
 
 			var room = new RoomSpec {
 				x = 1,
