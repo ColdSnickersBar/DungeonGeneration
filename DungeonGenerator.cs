@@ -10,10 +10,12 @@ namespace DungeonGeneration
 		}
 
 		IRoomStamper _roomStamper;
+		IRoomSpecGenerator _roomSpecGenerator;
 
-		public DungeonGenerator (IRoomStamper stamper)
+		public DungeonGenerator (IRoomStamper stamper, IRoomSpecGenerator roomSpecGenerator)
 		{
 			_roomStamper = stamper;
+			_roomSpecGenerator = roomSpecGenerator;
 		}
 
 		public void Generate ()
@@ -21,13 +23,7 @@ namespace DungeonGeneration
 			if(RoomPasses > 0){
 				for(int i=0;i<RoomPasses;i++){
 
-					var room = new RoomSpec {
-						x = 1,
-						y = 1,
-						width = 10, 
-						height = 10
-					};
-					_roomStamper.Stamp (room);
+					_roomStamper.Stamp (_roomSpecGenerator.getNext());
 				}
 			}
 		}

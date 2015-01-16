@@ -1,0 +1,24 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../OllieV1/Assets/Scripts/Drive/DriveRobotWithJoystickBehaviour.cs">
+    <Files>
+      <File FileName="../OllieV1/Assets/Scripts/Drive/JoystickTouch.cs" Line="3" Column="3" />
+      <File FileName="../OllieV1/Assets/Scripts/Drive/DriveRobotWithJoystickBehaviour.cs" Line="35" Column="35" />
+    </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State expanded="True" selected="True">
+          <Node name="Tests" expanded="True">
+            <Node name="Tests" expanded="True">
+              <Node name="DungeonGeneratorTests" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

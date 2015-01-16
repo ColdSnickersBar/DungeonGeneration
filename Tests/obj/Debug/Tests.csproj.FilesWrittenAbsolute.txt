@@ -1,0 +1,10 @@
+/Users/Adam/projects/DungeonGeneration/Tests/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/Adam/projects/DungeonGeneration/Tests/bin/Debug/Tests.dll.mdb
+/Users/Adam/projects/DungeonGeneration/Tests/bin/Debug/Tests.dll
+/Users/Adam/projects/DungeonGeneration/Tests/obj/Debug/Tests.dll
+/Users/Adam/projects/DungeonGeneration/Tests/obj/Debug/Tests.dll.mdb
+/Users/Adam/projects/DungeonGeneration/Tests/bin/Debug/nunit.framework.dll
+/Users/Adam/projects/DungeonGeneration/Tests/bin/Debug/NSubstitute.dll
+/Users/Adam/projects/DungeonGeneration/Tests/bin/Debug/NSubstituteAutoMocker.dll
+/Users/Adam/projects/DungeonGeneration/Tests/bin/Debug/DungeonGeneration.dll
+/Users/Adam/projects/DungeonGeneration/Tests/bin/Debug/DungeonGeneration.dll.mdb

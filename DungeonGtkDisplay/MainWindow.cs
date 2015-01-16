@@ -20,15 +20,12 @@ public partial class MainWindow: Gtk.Window
 		ShowAll();
 
 		_grid = new Grid (100, 100);
+
 		var stamper = new RectangularRoomStamper (_grid);
 
-		var room = new RoomSpec {
-			x = 1,
-			y = 1,
-			width = 50,
-			height = 50
-		};
-		stamper.Stamp (room);
+		var generator = new DungeonGenerator (stamper, null);
+		generator.RoomPasses = 100;
+		generator.Generate ();
 	}
 
 	protected void OnDeleteEvent (object sender, DeleteEventArgs a)

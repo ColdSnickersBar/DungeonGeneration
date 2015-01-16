@@ -38,6 +38,8 @@
     <Compile Include="IRoomStamper.cs" />
     <Compile Include="DungeonGenerator.cs" />
     <Compile Include="RectangularRoomStamper.cs" />
+    <Compile Include="IRoomSpecGenerator.cs" />
+    <Compile Include="RandomRoomSpecGenerator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
